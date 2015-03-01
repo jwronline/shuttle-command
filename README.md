@@ -22,3 +22,5 @@ To exit from a position, enter operation 999.
 # License
 
 Made for [JWR v.z.w](http://jwronline.be) by Haroen Viaene
+
+<div class="gfyitem" data-title=true data-autoplay=false data-controls=true data-expand=false data-id="BestYellowishElephantseal" ></div>
