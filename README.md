@@ -6,7 +6,7 @@ You need an (external) numpad and modify it to look like this image:
 
 ![modified numpad](numpad.png)
 
-Download the [shuttle.sh](shuttle.sh) script using your preferred method
+Download the [shuttle.sh](img/shuttle.sh) script using your preferred method
 
 Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`)
 
@@ -21,7 +21,7 @@ To exit from a position, enter operation 999.
 
 # Demo
 
-![demo](demo.png)
+![demo](img/demo.png)
 
 # License
 
