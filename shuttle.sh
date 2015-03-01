@@ -5,6 +5,7 @@ red='\033[0;31m'
 green='\033[0;32m'
 NC='\033[0m'
 
+# language selection
 while [[ $lang != "/001" && $lang != "/002" ]]; do
 	echo "language:"
 	echo "EN (/001)"
@@ -15,7 +16,7 @@ done
 case $lang in
 	"/001" )
 		echo -e "${green}English${NC}"
-		helpmes="Press \"HELP\" \"EXEC\" for help"
+		helpmess="Press \"HELP\" \"EXEC\" for help"
 		posnum="Enter your position number"
 		surexit="Are you sure you want to exit your position?"
 		exitng="exiting"
@@ -30,7 +31,7 @@ case $lang in
 		;;
 	"/002" )
 		echo -e "${green}Nederlands${NC}"
-		helpmes="Druk op \"HELP\" \"EXEC\" voor hulp"
+		helpmess="Druk op \"HELP\" \"EXEC\" voor hulp"
 		posnum="Voer een positienummer in"
 		surexit="Wil je je plaats zeker afstaan?"
 		exitng="Je bent nu niet meer"
@@ -45,8 +46,9 @@ case $lang in
 		;;
 esac
 
-echo "$helpmes"
+echo "$helpmess"
 
+# get out of a position, press /999 to confirm
 function newPos() {
 	echo -e "${red}$surexit${NC}"
 	read exitting
@@ -56,6 +58,7 @@ function newPos() {
 	fi
 }
 
+# sets the position
 function position() {
 	echo "$posnum"
 	pos="0"
@@ -369,6 +372,7 @@ function PAO() {
 	esac
 }
 
+# main method
 while [[ true ]]; do
 	position
 	while [[ $exitting != true ]]; do
