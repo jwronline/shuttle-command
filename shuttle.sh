@@ -42,7 +42,7 @@ function CMDR() {
 		"*001" )
 			echo "$operation initialised. Enter the item."
 			exits=0
-			while [[ $exit == 0 ]]; do
+			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
 					"/001" )
@@ -81,7 +81,7 @@ function PLT() {
 		"*001" )
 			echo "$operation initialised. Enter the item."
 			exits=0
-			while [[ $exit == 0 ]]; do
+			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
 					"/001" )
@@ -124,4 +124,5 @@ while [[ true ]]; do
 				;;
 		esac
 	done
+	exitting=false
 done
