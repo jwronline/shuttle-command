@@ -7,6 +7,15 @@ NC='\033[0m'
 
 echo "press \"HELP\" \"EXEC\" for help"
 
+function newPos() {
+	echo -e "${red}Are you sure you want to exit?${NC}"
+	read exitting
+	if [[ $exitting == "/999" ]]; then
+		echo "exiting $pos"
+		exitting=true
+	fi
+}
+
 function position() {
 	echo "enter your position number"
 	pos="0"
@@ -59,12 +68,7 @@ function CMDR() {
 			exits=0
 			;;
 		"*999" )
-			echo -e "${red}Are you sure you want to exit?${NC}"
-			read exitting
-			if [[ $exitting == "999" ]]; then
-				echo "exiting $pos"
-				exitting=true
-			fi
+			newPos
 			;;
 		"+" )
 			echo "enter \"OPS\", your operation number  \"EXEC\""
@@ -98,12 +102,41 @@ function PLT() {
 			exits=0
 			;;
 		"*999" )
-			echo -e "${red}Are you sure you want to exit?${NC}"
-			read exitting
-			if [[ $exitting == "999" ]]; then
-				echo "exiting $pos"
-				exitting=true
-			fi
+			newPos
+			;;
+		"+" )
+			echo "enter \"OPS\", your operation number  \"EXEC\""
+			;;
+	esac
+}
+
+function FD() {
+	echo "enter your operation"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation initialised. Enter the item."
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}correct code${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "enter \"ITEM\", your item number  \"EXEC\""
+						;;
+					* )
+						echo -e "${red}wrong code${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
 			;;
 		"+" )
 			echo "enter \"OPS\", your operation number  \"EXEC\""
@@ -120,6 +153,9 @@ while [[ true ]]; do
 				;;
 			"PLT" )
 				PLT
+				;;
+			"FD" )
+				FD
 				;;
 		esac
 	done
