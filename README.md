@@ -5,7 +5,7 @@ Use a modified numpad to emulate the input of commands in a space shuttle.
 
 You need an (external) numpad and modify it to look like this image:
 
-<!-- ls -->
+![modified numpad](numpad.png)
 
 # Usage
 
