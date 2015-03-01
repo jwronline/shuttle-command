@@ -5,19 +5,59 @@ red='\033[0;31m'
 green='\033[0;32m'
 NC='\033[0m'
 
-echo "press \"HELP\" \"EXEC\" for help"
+while [[ $lang != "/001" && $lang != "/002" ]]; do
+	echo "language:"
+	echo "EN (/001)"
+	echo "NL (/002)"
+	read lang
+done
+
+case $lang in
+	"/001" )
+		echo -e "${green}English${NC}"
+		helpmes="Press \"HELP\" \"EXEC\" for help"
+		posnum="Enter your position number"
+		surexit="Are you sure you want to exit your position?"
+		exitng="exiting "
+		posis="Your position is: "
+		enterops="Enter your operation"
+		posinfo="Enter \"POS\", your position number, \"EXEC\""
+		initialised="initialised. Enter the item."
+		corr="correct code"
+		err="wrong code"
+		iteminfo="Enter \"ITEM\", your item number  \"EXEC\""
+		opsinfo="Enter \"OPS\", your operation number  \"EXEC\""
+		;;
+	"/002" )
+		echo -e "${green}Nederlands${NC}"
+		helpmes="Druk op \"HELP\" \"EXEC\" voor hulp"
+		posnum="Voer een positienummer in"
+		surexit="Wil je je plaats zeker afstaan?"
+		exitng="Je bent nu niet meer "
+		posis="Je positie is: "
+		enterops="Voer je operatie in"
+		posinfo="Voer \"POS\", dan je positienummer, en dan \"EXEC\" in"
+		initialised="geïnitialiseerd. Voer het item in."
+		corr="code correct"
+		err="foute code"
+		iteminfo="Voer \"ITEM\", dan je positienummer, en dan \"EXEC\" in"
+		opsinf
+		;;
+esac
+
+echo "$helpmes"
 
 function newPos() {
-	echo -e "${red}Are you sure you want to exit?${NC}"
+	echo -e "${red}$surexit${NC}"
 	read exitting
 	if [[ $exitting == "/999" ]]; then
-		echo "exiting $pos"
+		echo "$exitng $pos"
 		exitting=true
 	fi
 }
 
 function position() {
-	echo "enter your position number"
+	echo "$posnum"
 	pos="0"
 	while [[ $pos == "0" ]]; do
 		read position
@@ -33,35 +73,35 @@ function position() {
 				pos="FD"
 				;;
 			"+" )
-				echo "enter \"POS\", your position number  \"EXEC\""
+				echo "$posinfo"
 				;;
 		esac
 		if [[ $pos != 0 ]]; then
-			echo "your position is $pos"
+			echo "$posis $pos"
 		fi
 	done
 }
 
 function CMDR() {
-	echo "enter your operation"
+	echo "$enterops"
 	read operation
 
 	case $operation in
 		"*001" )
-			echo "$operation initialised. Enter the item."
+			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
 					"/001" )
-						echo -e "${green}correct code${NC}"
+						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
 					"+" )
-						echo "enter \"ITEM\", your item number  \"EXEC\""
+						echo "$iteminfo"
 						;;
 					* )
-						echo -e "${red}wrong code${NC}"
+						echo -e "${red}$err${NC}"
 						;;
 				esac
 			done
@@ -71,31 +111,31 @@ function CMDR() {
 			newPos
 			;;
 		"+" )
-			echo "enter \"OPS\", your operation number  \"EXEC\""
+			echo "$opsinfo"
 			;;
 	esac
 }
 
 function PLT() {
-	echo "enter your operation"
+	echo "$enterops"
 	read operation
 
 	case $operation in
 		"*001" )
-			echo "$operation initialised. Enter the item."
+			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
 					"/001" )
-						echo -e "${green}correct code${NC}"
+						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
 					"+" )
-						echo "enter \"ITEM\", your item number  \"EXEC\""
+						echo "$iteminfo"
 						;;
 					* )
-						echo -e "${red}wrong code${NC}"
+						echo -e "${red}$err${NC}"
 						;;
 				esac
 			done
@@ -105,44 +145,11 @@ function PLT() {
 			newPos
 			;;
 		"+" )
-			echo "enter \"OPS\", your operation number  \"EXEC\""
+			echo "$opsinfo"
 			;;
 	esac
 }
 
-function FD() {
-	echo "enter your operation"
-	read operation
-
-	case $operation in
-		"*001" )
-			echo "$operation initialised. Enter the item."
-			exits=0
-			while [[ $exits == 0 ]]; do
-				read item
-				case $item in
-					"/001" )
-						echo -e "${green}correct code${NC}"
-						exits=1
-						;;
-					"+" )
-						echo "enter \"ITEM\", your item number  \"EXEC\""
-						;;
-					* )
-						echo -e "${red}wrong code${NC}"
-						;;
-				esac
-			done
-			exits=0
-			;;
-		"*999" )
-			newPos
-			;;
-		"+" )
-			echo "enter \"OPS\", your operation number  \"EXEC\""
-			;;
-	esac
-}
 
 while [[ true ]]; do
 	position
