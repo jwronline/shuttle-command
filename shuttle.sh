@@ -24,7 +24,6 @@ function position() {
 				pos="FD"
 				;;
 			"+" )
-				pos="+"
 				echo "enter \"POS\", your position number  \"EXEC\""
 				;;
 		esac
