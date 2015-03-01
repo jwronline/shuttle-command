@@ -21,4 +21,4 @@ To exit from a position, enter operation 999.
 
 # License
 
-Made for JWR v.z.w by Haroen Viaene
+Made for [JWR v.z.w](http://jwronline.be) by Haroen Viaene
