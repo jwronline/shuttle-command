@@ -72,6 +72,21 @@ function position() {
 			"-003" )
 				pos="FD"
 				;;
+			"-004" )
+				pos="WXT"
+				;;
+			"-005" )
+				pos="LD"
+				;;
+			"-006" )
+				pos="ELSS"
+				;;
+			"-007" )
+				pos="SSO"
+				;;
+			"-008" )
+				pos="PAO"
+				;;
 			"+" )
 				echo "$posinfo"
 				;;
@@ -150,6 +165,209 @@ function PLT() {
 	esac
 }
 
+function FD() {
+	echo "$enterops"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation $initialised"
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}$corr${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
+			;;
+		"+" )
+			echo "$opsinfo"
+			;;
+	esac
+}
+
+function WXT() {
+	echo "$enterops"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation $initialised"
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}$corr${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
+			;;
+		"+" )
+			echo "$opsinfo"
+			;;
+	esac
+}
+
+function LD() {
+	echo "$enterops"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation $initialised"
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}$corr${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
+			;;
+		"+" )
+			echo "$opsinfo"
+			;;
+	esac
+}
+
+function ELSS() {
+	echo "$enterops"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation $initialised"
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}$corr${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
+			;;
+		"+" )
+			echo "$opsinfo"
+			;;
+	esac
+}
+
+function SSO() {
+	echo "$enterops"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation $initialised"
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}$corr${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
+			;;
+		"+" )
+			echo "$opsinfo"
+			;;
+	esac
+}
+
+function PAO() {
+	echo "$enterops"
+	read operation
+
+	case $operation in
+		"*001" )
+			echo "$operation $initialised"
+			exits=0
+			while [[ $exits == 0 ]]; do
+				read item
+				case $item in
+					"/001" )
+						echo -e "${green}$corr${NC}"
+						exits=1
+						;;
+					"+" )
+						echo "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			exits=0
+			;;
+		"*999" )
+			newPos
+			;;
+		"+" )
+			echo "$opsinfo"
+			;;
+	esac
+}
 
 while [[ true ]]; do
 	position
@@ -163,6 +381,21 @@ while [[ true ]]; do
 				;;
 			"FD" )
 				FD
+				;;
+			"WXT" )
+				WXT
+				;;
+			"LD" )
+				LD
+				;;
+			"ELSS" )
+				ELSS
+				;;
+			"SSO" )
+				SSO
+				;;
+			"PAO" )
+				PAO
 				;;
 		esac
 	done
