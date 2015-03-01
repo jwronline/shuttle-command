@@ -17,7 +17,7 @@ To exit from a position, enter operation 999.
 
 # Demo
 
-![demo](demo.webm)
+![demo](demo.gif)
 
 # License
 
