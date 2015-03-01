@@ -15,6 +15,10 @@ Then you can enter the item-code, which will display whether it was correct or n
 
 To exit from a position, enter operation 999.
 
+# Demo
+
+![demo](demo.webm)
+
 # License
 
 Made for JWR v.z.w by Haroen Viaene
