@@ -4,7 +4,7 @@ Use a modified numpad to emulate the input of commands in a space shuttle.
 # Set-up
 You need an (external) numpad and modify it to look like this image:
 
-![modified numpad](numpad.png)
+![modified numpad](img/numpad.png)
 
 Download the [shuttle.sh](img/shuttle.sh) script using your preferred method
 
