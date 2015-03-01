@@ -41,7 +41,7 @@ case $lang in
 		corr="code correct"
 		err="foute code"
 		iteminfo="Voer \"ITEM\", dan je positienummer, en dan \"EXEC\" in"
-		opsinf
+		opsinfo="Voer \"OPS\", dan je positienummer, en dan \"EXEC\" in"
 		;;
 esac
 
