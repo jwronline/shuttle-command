@@ -15,5 +15,7 @@ case $position in
 	"*003" )
 		pos="fd"
 		;;
+	"+" )
+		echo "enter \"OPS\", your position number  \"EXEC\""
 esac
 echo "your position is $pos"
