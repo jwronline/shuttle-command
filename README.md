@@ -28,4 +28,4 @@ To exit from a position, enter operation 999.
 Made for [JWR v.z.w](http://jwronline.be) by Haroen Viaene
 
 
-Font is based on "For Personal Gain - NonProfit"
+Font is based on "[For Personal Gain - NonProfit](https://medium.com/portfolio-process/why-im-giving-my-typeface-away-for-free-466919f02d96)"
