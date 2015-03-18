@@ -45,6 +45,7 @@ To exit from a position, enter operation 999.
 ## Operating
 
 - [ ] to do: remake the scripts to make use of `shuttle.sh`
+- [ ] to do: make `shuttle.sh` in such a way that it matches the script
 
 The times at which certain codes have to be entered are written in the space shuttle script. This can be found at [scripts/](scripts/)
 
