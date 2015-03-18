@@ -11,7 +11,7 @@ You need an (external) numpad and modify it to look like this image:
 Download the [shuttle.sh](img/shuttle.sh) script using your preferred method. For example through git:
 
 ```sh
-git clone https://github.com/haroenv/shuttle-command
+git clone https://github.com/haroenv/shuttle-command.git
 cd shuttle-command
 ls
 ```
