@@ -6,9 +6,17 @@ You need an (external) numpad and modify it to look like this image:
 
 ![modified numpad](img/numpad.png)
 
-## Using the modified font
+## Downloading the script
 
-Download the [shuttle.sh](img/shuttle.sh) script using your preferred method
+Download the [shuttle.sh](img/shuttle.sh) script using your preferred method. For example through git:
+
+```sh
+git clone https://github.com/haroenv/shuttle-command
+cd shuttle-command
+ls
+```
+
+## Using the modified font
 
 Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`)
 
@@ -16,16 +24,29 @@ and make sure it is used in your terminal (right-click > preferences > font > Fo
 
 ## Using AutoKey
 
-- [ ] to do: write documentation
+- [ ] to do: write installation-script
 
-
+Run the `autoKeySetup.sh`-script, which will determine if there is already an install of autoKey, and install the correct script to change the numpad behaviour. Beware, this will affect every time an external numpad is used on this computer, unless that script of autoKey is manually disabled. [More info about downloading autoKey](https://code.google.com/p/autokey/wiki/InstallingAutoKey).
 
 # Usage
-open the script in terminal, enter the correct position and then the correct operation.
+
+Open your terminal, `cd` into the correct directory.
+
+It could be possible that the script doesn't have the correct permissions. You can check this by doing `ls -a shuttle.sh` in the correct directory. The output should look like this: `-rwxr-xr-x 1 user  staff   6.7K Mar 18 12:06 shuttle.sh*`, important is that you at least see the first `x`, if you don't you can change the permissions using `chmod 755 shuttle.sh`.
+
+## Running
+open the script in terminal using `./shuttle.sh`, enter the language, the correct position and then the correct operation.
 
 Then you can enter the item-code, which will display whether it was correct or not.
 
 To exit from a position, enter operation 999.
+
+
+## Operating
+
+- [ ] to do: remake the scripts to make use of `shuttle.sh`
+
+The times at which certain codes have to be entered are written in the space shuttle script. This can be found at [scripts/](scripts/)
 
 # Demo
 ## Using AutoKey
