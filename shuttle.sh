@@ -14,7 +14,7 @@ while [[ $lang != "/001" && $lang != "/002" ]]; do
 done
 
 case $lang in
-	"/001" )
+	"/001" | "ITEM001" )
 		echo -e "${green}English${NC}"
 		helpmess="Press \"HELP\" \"EXEC\" for help"
 		posnum="Enter your position number"
@@ -29,7 +29,7 @@ case $lang in
 		iteminfo="Enter \"ITEM\", your item number  \"EXEC\""
 		opsinfo="Enter \"OPS\", your operation number  \"EXEC\""
 		;;
-	"/002" )
+	"/002" | "ITEM002" )
 		echo -e "${green}Nederlands${NC}"
 		helpmess="Druk op \"HELP\" \"EXEC\" voor hulp"
 		posnum="Voer een positienummer in"
@@ -52,7 +52,7 @@ echo "$helpmess"
 function newPos() {
 	echo -e "${red}$surexit${NC}"
 	read exitting
-	if [[ $exitting == "/999" ]]; then
+	if [[ $exitting == "/999" || $exitting == "ITEM999" ]]; then
 		echo "$exitng $pos"
 		exitting=true
 	fi
@@ -66,31 +66,31 @@ function position() {
 		read position
 
 		case $position in
-			"-001" )
+			"-001" | "POS001" )
 				pos="CMDR"
 				;;
-			"-002" )
+			"-002" | "POS002" )
 				pos="PLT"
 				;;
-			"-003" )
+			"-003" | "POS003" )
 				pos="FD"
 				;;
-			"-004" )
+			"-004" | "POS004" )
 				pos="WXT"
 				;;
-			"-005" )
+			"-005" | "POS005" )
 				pos="LD"
 				;;
-			"-006" )
+			"-006" | "POS006" )
 				pos="ELSS"
 				;;
-			"-007" )
+			"-007" | "POS007" )
 				pos="SSO"
 				;;
-			"-008" )
+			"-008" | "POS008" )
 				pos="PAO"
 				;;
-			"+" )
+			"+"  | "HELP" )
 				echo "$posinfo"
 				;;
 		esac
@@ -105,17 +105,17 @@ function CMDR() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -125,7 +125,7 @@ function CMDR() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -139,17 +139,17 @@ function PLT() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -159,7 +159,7 @@ function PLT() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -173,17 +173,17 @@ function FD() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -193,7 +193,7 @@ function FD() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -207,17 +207,17 @@ function WXT() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -227,7 +227,7 @@ function WXT() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -241,17 +241,17 @@ function LD() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -261,7 +261,7 @@ function LD() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -275,17 +275,17 @@ function ELSS() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -295,7 +295,7 @@ function ELSS() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -309,17 +309,17 @@ function SSO() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -329,7 +329,7 @@ function SSO() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
@@ -343,17 +343,17 @@ function PAO() {
 	read operation
 
 	case $operation in
-		"*001" )
+		"*001" | "OPS001" )
 			echo "$operation $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				read item
 				case $item in
-					"/001" )
+					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" )
+					"+" | "HELP")
 						echo "$iteminfo"
 						;;
 					* )
@@ -363,7 +363,7 @@ function PAO() {
 			done
 			exits=0
 			;;
-		"*999" )
+		"*999" | "OPS999")
 			newPos
 			;;
 		"+" )
