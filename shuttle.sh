@@ -102,7 +102,7 @@ function position() {
 				;;
 		esac
 		if [[ $pos != 0 ]]; then
-			echo "$posis $pos"
+			echo "$posis ${green}$pos${NC}"
 		fi
 	done
 }
