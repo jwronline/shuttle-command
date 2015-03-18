@@ -26,7 +26,15 @@ Then you can enter the item-code, which will display whether it was correct or n
 To exit from a position, enter operation 999.
 
 # Demo
-![demo](img/demo.png)
+## Using AutoKey
+This is also the preferred method for a full keyboard without alterations.
+
+![demo](img/demo-full.png)
+
+## Using the modified font
+This method is optimised for input by numpad, but not great when you want to still do other things in the same window.
+
+![demo](img/demo-short.png)
 
 # License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">shuttle-command</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>. No warranty whatsoever.
