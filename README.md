@@ -18,6 +18,8 @@ and make sure it is used in your terminal (right-click > preferences > font > Fo
 
 - [ ] to do: write documentation
 
+
+
 # Usage
 open the script in terminal, enter the correct position and then the correct operation.
 
@@ -27,7 +29,7 @@ To exit from a position, enter operation 999.
 
 # Demo
 ## Using AutoKey
-This is also the preferred method for a full keyboard without alterations.
+This is also the preferred method for a full keyboard without alterations. AutoKey will convert the keys on the keypad to the corresponding codes when correctly set up.
 
 ![demo](img/demo-full.png)
 
