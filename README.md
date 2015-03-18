@@ -6,11 +6,17 @@ You need an (external) numpad and modify it to look like this image:
 
 ![modified numpad](img/numpad.png)
 
+## Using the modified font
+
 Download the [shuttle.sh](img/shuttle.sh) script using your preferred method
 
 Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`)
 
 and make sure it is used in your terminal (right-click > preferences > font > For Personal Gain (regular)). This font is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
+
+## Using AutoKey
+
+- [ ] to do: write documentation
 
 # Usage
 open the script in terminal, enter the correct position and then the correct operation.
@@ -28,4 +34,4 @@ To exit from a position, enter operation 999.
 Made for [JWR v.z.w](http://jwronline.be) by Haroen Viaene
 
 
-Font is based on "[For Personal Gain - NonProfit](https://medium.com/portfolio-process/why-im-giving-my-typeface-away-for-free-466919f02d96)"
+Font is based on ["For Personal Gain - NonProfit"](https://medium.com/portfolio-process/why-im-giving-my-typeface-away-for-free-466919f02d96)
