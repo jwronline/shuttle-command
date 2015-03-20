@@ -20,7 +20,11 @@ ls
 
 Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
 
-and make sure it is used in your terminal (right-click > preferences > font > For Personal Gain (regular)). This font is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
+To make things easy, the first method is also included in a script called `moveFont.sh`, which can ask for your admin password.
+
+and make sure it is used in your terminal (right-click > preferences > font > For Personal Gain (regular)).
+
+This font is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
 
 ## Using AutoKey
 
