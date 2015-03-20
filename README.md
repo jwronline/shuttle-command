@@ -6,6 +6,8 @@ You need an (external) numpad and modify it to look like this image:
 
 ![modified numpad](img/numpad.png)
 
+The keypad is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
+
 ## Downloading the script
 
 Download the [shuttle.sh](img/shuttle.sh) script using your preferred method. For example through git:
