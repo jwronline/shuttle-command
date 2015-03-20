@@ -16,6 +16,14 @@ cd shuttle-command
 ls
 ```
 
+or if you don't have git, a simple curl should also work:
+
+- [ ] to do: find correct raw.githubusercontent.com address
+
+```sh
+curl
+```
+
 ## Using the modified font
 
 Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
