@@ -25,6 +25,12 @@ curl https://github.com/Haroenv/shuttle-command/archive/master.zip
 unzip master.zip
 ```
 
+## Using the second version of the script
+
+In this version, you don't see the user input immediately when inputting, but you don't have to physically change anything on the keyboard.
+
+To use this method, don't open `shuttle.sh`, but `altShuttle.sh` when asked in # Usage
+
 ## Using the modified font
 
 Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
@@ -35,7 +41,7 @@ and make sure it is used in your terminal (right-click > preferences > font > Fo
 
 This font is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
 
-## Using AutoKey
+## Using AutoKey (not recommended)
 
 - [ ] to do: write installation-script
 
