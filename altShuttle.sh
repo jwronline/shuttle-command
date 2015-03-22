@@ -8,7 +8,8 @@ NC='\033[0m'
 # language selection
 while [[ true ]]; do
 	echo "language:"
-	read lang
+	read -s lang
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $lang
 
 	case $lang in
 		"/001" | "ITEM001" )
@@ -59,7 +60,8 @@ echo -e "$helpmess"
 # get out of a position, press /999 to confirm
 function newPos() {
 	echo -e "${red}$surexit${NC}"
-	read exitting
+	read -s exitting
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $read
 	if [[ $exitting == "/999" || $exitting == "ITEM999" ]]; then
 		echo "$exitng $pos"
 		exitting=true
@@ -71,7 +73,8 @@ function position() {
 	echo "$posnum"
 	pos="0"
 	while [[ $pos == "0" ]]; do
-		read position
+		read -s position
+		sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $position
 
 		case $position in
 			"-001" | "POS001" )
@@ -112,20 +115,22 @@ function position() {
 
 function CMDR() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -146,20 +151,23 @@ function CMDR() {
 
 function PLT() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -180,20 +188,23 @@ function PLT() {
 
 function FD() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -214,20 +225,23 @@ function FD() {
 
 function WXT() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -248,20 +262,23 @@ function WXT() {
 
 function LD() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -282,20 +299,23 @@ function LD() {
 
 function ELSS() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -316,20 +336,23 @@ function ELSS() {
 
 function SSO() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -350,20 +373,23 @@ function SSO() {
 
 function PAO() {
 	echo "$enterops"
-	read operation
+	read -s operation
+	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
 
 	case $operation in
 		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				read item
+				read -s item
+				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
 					* )
