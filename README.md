@@ -6,7 +6,14 @@ You need an (external) numpad and modify it to look like this image:
 
 ![modified numpad](img/numpad.png)
 
-The keypad is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
+The keypad is modified to show:
+
+| original     | replaced |
+| ------------ | -------- |
+| <kbd>+</kbd> | HELP     |
+| <kbd>-</kbd> | POS      |
+| <kbd>/</kbd> | ITEM     |
+| <kbd>*</kbd> | OPS      |
 
 ## Downloading the script
 
@@ -29,9 +36,9 @@ unzip master.zip
 
 In this version, you don't see the user input immediately when inputting, but you don't have to physically change anything on the keyboard.
 
-To use this method, don't open `shuttle.sh`, but `altShuttle.sh` when asked in # Usage
+To use this method, don't open `shuttle.sh`, but `altShuttle.sh` when prompted to, in "Usage"
 
-## Using the modified font
+## Using the modified font (less recommended)
 
 Download the [font](font.otf) and install it (usually: `sudo cp -r ./font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
 
@@ -39,11 +46,36 @@ To make things easy, the first method is also included in a script called `moveF
 
 and make sure it is used in your terminal (right-click > preferences > font > For Personal Gain (regular)).
 
-This font is modified to show <kbd>+</kbd> as <kbd>HELP</kbd>, <kbd>-</kbd> as <kbd>POS</kbd>, <kbd>*</kbd> as <kbd>OPS</kbd> and <kbd>/</kbd> as <kbd>ITEM</kbd>.
+This font is modified to show:
+
+| original     | replaced |
+| ------------ | -------- |
+| <kbd>+</kbd> | HELP     |
+| <kbd>-</kbd> | POS      |
+| <kbd>/</kbd> | ITEM     |
+| <kbd>*</kbd> | OPS      |
+
+Now you can enter as expected on the numpad, but a drawback is that it's harder to read due to its lower size, and it changes settings for the whole terminal
 
 ## Using AutoKey (not recommended)
 
-- [ ] to do: write installation-script
+### Regular installation
+
+You'll have to install [AutoKey](https://code.google.com/p/autokey/), and set it up to change the following keys:
+
+
+| original     | replaced |
+| ------------ | -------- |
+| <kbd>+</kbd> | HELP     |
+| <kbd>-</kbd> | POS      |
+| <kbd>/</kbd> | ITEM     |
+| <kbd>*</kbd> | OPS      |
+
+You'll have to find a way to make this work in the `shuttle.sh`-script alone.
+
+### Using the setup script (not made)
+
+- [ ] to do: write setup-script
 
 Run the `autoKeySetup.sh`-script, which will determine if there is already an install of autoKey, and install the correct script to change the numpad behaviour. Beware, this will affect every time an external numpad is used on this computer, unless that script of autoKey is manually disabled. [More info about downloading autoKey](https://code.google.com/p/autokey/wiki/InstallingAutoKey).
 
@@ -70,7 +102,7 @@ To exit from a position, enter operation 999.
 The times at which certain codes have to be entered are written in the space shuttle script. This can be found at [scripts/](scripts/)
 
 # Demo
-## Using AutoKey
+## Using AutoKey or `altShuttle.sh`
 This is also the preferred method for a full keyboard without alterations. AutoKey will convert the keys on the keypad to the corresponding codes when correctly set up.
 
 ![demo](img/demo-full.png)
@@ -81,9 +113,11 @@ This method is optimised for input by numpad, but not great when you want to sti
 ![demo](img/demo-short.png)
 
 # License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">shuttle-command</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. No warranty whatsoever.
+[![Creative Commons Licence](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+
+shuttle-command is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). No warranty whatsoever.
 
 Made for [JWR v.z.w](http://jwronline.be) by Haroen Viaene
 
 
-Font is based on ["For Personal Gain - NonProfit"](https://medium.com/portfolio-process/why-im-giving-my-typeface-away-for-free-466919f02d96)
+Font is based on ["For Personal Gain - NonProfit"](https://medium.com/portfolio-process/why-im-giving-my-typeface-away-for-free-466919f02d96) (CC 0)
