@@ -15,6 +15,8 @@ The keypad is modified to show:
 | <kbd>/</kbd> | ITEM     |
 | <kbd>*</kbd> | OPS      |
 
+You'll also need a bash shell (included in most Linux distributions and in Mac OS X, emulators can be found for Windows)
+
 ## Downloading the script
 
 Download the [shuttle.sh](img/shuttle.sh) script using your preferred method. For example through git:
@@ -83,11 +85,11 @@ Run the `autoKeySetup.sh`-script, which will determine if there is already an in
 
 Open your terminal, `cd` into the correct directory.
 
-It could be possible that the script doesn't have the correct permissions. You can check this by doing `ls -a shuttle.sh` in the correct directory. The output should look like this: `-rwxr-xr-x 1 user  staff   6.7K Mar 18 12:06 shuttle.sh*`, important is that you at least see the first `x`, if you don't you can change the permissions using `chmod 755 shuttle.sh`.
+It could be possible that the script doesn't have the correct permissions. You can check this by doing `ls -l shuttle.sh` (or `ls -l ./altShuttle.sh`)in the correct directory. The output should look like this: `-rwxr-xr-x 1 user  staff   6.7K Mar 18 12:06 shuttle.sh*`, important is that you at least see the first `x`, if you don't you can change the permissions using `chmod 755 shuttle.sh`.
 
 ## Running
 
-open the script in terminal using `./shuttle.sh`, enter the language, the correct position and then the correct operation.
+open the script in terminal using `./shuttle.sh` (or `./altShuttle.sh`), enter the language, the correct position and then the correct operation.
 
 Then you can enter the item-code, which will display whether it was correct or not.
 
