@@ -116,7 +116,8 @@ function position() {
 function CMDR() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -152,7 +153,8 @@ function CMDR() {
 function PLT() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -189,7 +191,8 @@ function PLT() {
 function FD() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -226,7 +229,8 @@ function FD() {
 function WXT() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -263,7 +267,8 @@ function WXT() {
 function LD() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -300,7 +305,8 @@ function LD() {
 function ELSS() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -337,7 +343,8 @@ function ELSS() {
 function SSO() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
@@ -374,7 +381,8 @@ function SSO() {
 function PAO() {
 	echo "$enterops"
 	read -s operation
-	sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation
+	operation=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $operation)
+	echo "$operation"
 
 	case $operation in
 		"*001" | "OPS001" )
