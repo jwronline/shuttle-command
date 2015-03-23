@@ -33,7 +33,7 @@ To use this method, don't open `shuttle.sh`, but `altShuttle.sh` when asked in #
 
 ## Using the modified font
 
-Download the [font](shuttle.otf) and install it (usually: `sudo cp -r ./shuttle.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
+Download the [font](font.otf) and install it (usually: `sudo cp -r ./font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
 
 To make things easy, the first method is also included in a script called `moveFont.sh`, which can ask for your admin password.
 
