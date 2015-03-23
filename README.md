@@ -27,11 +27,15 @@ cd shuttle-command
 ls
 ```
 
+The advantage of using git instead of just downloading the files using curl, or the github zip download feature is that you can update the script when necessary using `git pull
+
 or if you don't have git, a simple curl should also work:
 
 ```sh
 curl https://github.com/Haroenv/shuttle-command/archive/master.zip
 unzip master.zip
+cd shuttle-command
+ls
 ```
 
 ## Using the second version of the script
