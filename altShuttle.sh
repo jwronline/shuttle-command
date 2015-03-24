@@ -3,7 +3,7 @@ clear
 # colours
 red='\033[0;31m'
 green='\033[0;32m'
-blue='\033[01;34m\'
+blue='\033[01;34m'
 NC='\033[0m'
 
 # language selection
