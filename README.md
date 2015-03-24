@@ -63,11 +63,11 @@ This font is modified to show:
 
 Now you can enter as expected on the numpad, but a drawback is that it's harder to read due to its lower size, and it changes settings for the whole terminal
 
-## Using AutoKey (not recommended)
+## Using AutoKey
 
 ### Regular installation
 
-You'll have to install [AutoKey](https://code.google.com/p/autokey/), and set it up to change the following keys:
+You'll have to install [AutoKey](https://code.google.com/p/autokey/) (or similar), and set it up to change the following keys:
 
 
 | original     | replaced |
