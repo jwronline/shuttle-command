@@ -8,6 +8,7 @@ NC='\033[0m'
 # language selection
 while [[ true ]]; do
 	echo "language:"
+	echo -n -e "${red}>${NC}"
 	read lang
 
 	case $lang in
@@ -59,6 +60,7 @@ echo -e "$helpmess"
 # get out of a position, press /999 to confirm
 function newPos() {
 	echo -e "${red}$surexit${NC}"
+	echo -n -e "${red}>${NC}"
 	read exitting
 	if [[ $exitting == "/999" || $exitting == "ITEM999" ]]; then
 		echo "$exitng $pos"
@@ -71,6 +73,7 @@ function position() {
 	echo "$posnum"
 	pos="0"
 	while [[ $pos == "0" ]]; do
+		echo -n -e "${red}>${NC}"
 		read position
 
 		case $position in
@@ -112,6 +115,7 @@ function position() {
 
 function CMDR() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -119,6 +123,7 @@ function CMDR() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -146,6 +151,7 @@ function CMDR() {
 
 function PLT() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -153,6 +159,7 @@ function PLT() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -180,6 +187,7 @@ function PLT() {
 
 function FD() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -187,6 +195,7 @@ function FD() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -214,6 +223,7 @@ function FD() {
 
 function WXT() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -221,6 +231,7 @@ function WXT() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -248,6 +259,7 @@ function WXT() {
 
 function LD() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -255,6 +267,7 @@ function LD() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -282,6 +295,7 @@ function LD() {
 
 function ELSS() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -289,6 +303,7 @@ function ELSS() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -316,6 +331,7 @@ function ELSS() {
 
 function SSO() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -323,6 +339,7 @@ function SSO() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
@@ -350,6 +367,7 @@ function SSO() {
 
 function PAO() {
 	echo "$enterops"
+	echo -n -e "${red}>${NC}"
 	read operation
 
 	case $operation in
@@ -357,6 +375,7 @@ function PAO() {
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
+				echo -n -e "${red}>${NC}"
 				read item
 				case $item in
 					"/001" | "ITEM001" )
