@@ -103,15 +103,23 @@ To exit from a position, enter operation 999.
 The times at which certain codes have to be entered are written in the space shuttle script. This can be found at [scripts/](scripts/)
 
 # Demo
-## Methods one and two
-This is also the preferred method for a full keyboard without alterations. AutoKey will convert the keys on the keypad to the corresponding codes when correctly set up.
+## Delayed input
 
-![demo](img/demo-full.png)
+This is the method requiring the least set-up. The script waits for a carriage return (<kbd>ENTER</kbd>), then it replaces <kbd>/</kbd> to <kbd>ITEM</kbd> etc., after which it will be showed on that line.
 
-## Method three
-This method is optimised for input by numpad, but not great when you want to still do other things in the same window.
+![demo](img/demo-del.png)
 
-![demo](img/demo-short.png)
+## Changed keymap
+
+This is also the preferred method for a full keyboard without alterations. By changing your keymap, the keys on the keypad will be converted to the corresponding codes when correctly set up.
+
+![demo](img/demo-keymap.png)
+
+## Modified font
+
+This method is optimised for input by numpad, but not great when you want to still do other things in the same window. It also requires a rather large font size to be legible.
+
+![demo](img/demo-font.png)
 
 # License
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
