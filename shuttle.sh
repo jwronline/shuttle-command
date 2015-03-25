@@ -23,7 +23,7 @@ while [[ true ]]; do
 	elif [[ $inputmethod == "/002" || $inpumethod == "ITEM002" ]]; then
 		# input with replacement
 		function input() {
-			echo "$1"
+			echo -e "$1"
 			echo -n -e "${blue}>${NC}"
 			local __resultvar=$2
 			read -s myresult
