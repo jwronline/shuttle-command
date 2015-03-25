@@ -38,13 +38,28 @@ cd shuttle-command
 ls
 ```
 
-## Using the second version of the script
+## Changing the keymap
 
-In this version, you don't see the user input immediately when inputting, but you don't have to physically change anything on the keyboard.
+To use this method, you'll have to find out to what keys your numpad are mapped. When you find out what keycodes the keys to replaced are mapped, you can change your keymap to.
 
-To use this method, don't open `shuttle.sh`, but `altShuttle.sh` when prompted to, in "Usage"
+| original     | replaced |
+| ------------ | -------- |
+| <kbd>+</kbd> | HELP     |
+| <kbd>-</kbd> | POS      |
+| <kbd>/</kbd> | ITEM     |
+| <kbd>*</kbd> | OPS      |
 
-## Using the modified font (less recommended)
+- [ ] to do: how to change keymap
+
+When using the script, your "input method" will be "ITEM001"
+
+## Using the delayed input
+
+Using this method, you don't have to change anything to your terminal or install to your machine. The drawback is that you can't see your input until pressing <kbd>EXEC</kbd>(<kbd>⏎</kbd>/<kbd>ENTER</kbd>). This is because it has to be processed before being able to show what the several keys mean.
+
+When using the script, your "input method" will be "ITEM002"
+
+## Using the modified font (not recommended)
 
 Download the [font](font.otf) and install it (usually: `sudo cp -r ./font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
 
@@ -63,37 +78,17 @@ This font is modified to show:
 
 Now you can enter as expected on the numpad, but a drawback is that it's harder to read due to its lower size, and it changes settings for the whole terminal
 
-## Using AutoKey
-
-### Regular installation
-
-You'll have to install [AutoKey](https://code.google.com/p/autokey/) (or similar), and set it up to change the following keys:
-
-
-| original     | replaced |
-| ------------ | -------- |
-| <kbd>+</kbd> | HELP     |
-| <kbd>-</kbd> | POS      |
-| <kbd>/</kbd> | ITEM     |
-| <kbd>*</kbd> | OPS      |
-
-You'll have to find a way to make this work in the `shuttle.sh`-script alone.
-
-### Using the setup script (not made)
-
-- [ ] to do: write setup-script
-
-Run the `autoKeySetup.sh`-script, which will determine if there is already an install of autoKey, and install the correct script to change the numpad behaviour. Beware, this will affect every time an external numpad is used on this computer, unless that script of autoKey is manually disabled. [More info about downloading autoKey](https://code.google.com/p/autokey/wiki/InstallingAutoKey).
+When using the script, your "input method" will be "ITEM001"
 
 # Usage
 
 Open your terminal, `cd` into the correct directory.
 
-It could be possible that the script doesn't have the correct permissions. You can check this by doing `ls -l shuttle.sh` (or `ls -l ./altShuttle.sh`)in the correct directory. The output should look like this: `-rwxr-xr-x 1 user  staff   6.7K Mar 18 12:06 shuttle.sh*`, important is that you at least see the first `x`, if you don't you can change the permissions using `chmod 755 shuttle.sh`.
+It could be possible that the script doesn't have the correct permissions. You can check this by doing `ls -l shuttle.sh` in the correct directory. The output should look like this: `-rwxr-xr-x 1 user  staff   6.7K Mar 18 12:06 shuttle.sh*`, important is that you at least see the first `x`, if you don't you can change the permissions using `chmod 755 shuttle.sh`.
 
 ## Running
 
-open the script in terminal using `./shuttle.sh` (or `./altShuttle.sh`), enter the language, the correct position and then the correct operation.
+open the script in terminal using `./shuttle.sh`, enter the language, the correct position and then the correct operation.
 
 Then you can enter the item-code, which will display whether it was correct or not.
 
@@ -108,12 +103,12 @@ To exit from a position, enter operation 999.
 The times at which certain codes have to be entered are written in the space shuttle script. This can be found at [scripts/](scripts/)
 
 # Demo
-## Using AutoKey or `altShuttle.sh`
+## Methods one and two
 This is also the preferred method for a full keyboard without alterations. AutoKey will convert the keys on the keypad to the corresponding codes when correctly set up.
 
 ![demo](img/demo-full.png)
 
-## Using the modified font
+## Method three
 This method is optimised for input by numpad, but not great when you want to still do other things in the same window.
 
 ![demo](img/demo-short.png)
