@@ -28,6 +28,7 @@ while [[ true ]]; do
 			local __resultvar=$2
 			read -s myresult
 			myresult=$(sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $myresult)
+			echo $myresult
 			eval $__resultvar="'$myresult'"
 		}
 		break
@@ -146,6 +147,7 @@ function CMDR() {
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
+
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
