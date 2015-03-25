@@ -143,12 +143,9 @@ function CMDR() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -178,12 +175,9 @@ function PLT() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -213,12 +207,9 @@ function FD() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -248,12 +239,9 @@ function WXT() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -283,12 +271,9 @@ function LD() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -318,12 +303,9 @@ function ELSS() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -353,12 +335,9 @@ function SSO() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
@@ -388,12 +367,9 @@ function PAO() {
 
 	case $operation in
 		"*001" | "OPS001" )
-			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
-				echo -n -e "${blue}>${NC}"
-				read -s item
-				sed 's/\//ITEM/;s/-/POS/;s/*/OPS/;s/+/HELP/' <<< $item
+				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
 						echo -e "${green}$corr${NC}"
