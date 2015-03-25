@@ -248,12 +248,6 @@ function WXT() {
 
 	case $operation in
 		"*001" | "OPS001" )
-exits=0
-while [[ $exits == 0 ]]; do
-	input "${green}$operation${NC} $initialised" item
-
-	case $operation in
-		"*001" | "OPS001" )
 			echo -e "${green}$operation${NC} $initialised"
 			exits=0
 			while [[ $exits == 0 ]]; do
@@ -321,12 +315,6 @@ function LD() {
 
 function ELSS() {
 	input "$enterops" operation
-
-	case $operation in
-		"*001" | "OPS001" )
-exits=0
-while [[ $exits == 0 ]]; do
-	input "${green}$operation${NC} $initialised" item
 
 	case $operation in
 		"*001" | "OPS001" )
