@@ -100,7 +100,7 @@ To exit from a position, enter operation 999.
 - [ ] to do: remake the scripts to make use of `shuttle.sh`
 - [ ] to do: make `shuttle.sh` in such a way that it matches the script
 
-The times at which certain codes have to be entered are written in the space shuttle script. This can be found at [scripts/](scripts/)
+The times at which certain codes have to be entered are written in the space shuttle script. These scripts are so far only in Dutch. They can be found at [Haroenv/jwr-shuttle/scripts](http://github.com/haroenv/jwr-shuttle/tree/master/scripts)
 
 # Demo
 ## Delayed input
