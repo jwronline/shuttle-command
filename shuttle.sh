@@ -163,6 +163,7 @@ function CMDR() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -195,6 +196,7 @@ function PLT() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -208,6 +210,7 @@ function FD() {
 	input "$enterops" operation
 
 	case $operation in
+		# abort advisory
 		"*001" | "OPS001" )
 			exits=0
 			while [[ $exits == 0 ]]; do
@@ -227,6 +230,7 @@ function FD() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -259,6 +263,7 @@ function WXT() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -272,12 +277,13 @@ function LD() {
 	input "$enterops" operation
 
 	case $operation in
-		"*001" | "OPS001" )
+		# audio check
+		"*137" | "OPS137" )
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
-					"/001" | "ITEM001" )
+					"/137" | "ITEM137" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
@@ -291,6 +297,7 @@ function LD() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -323,6 +330,7 @@ function ELSS() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -355,6 +363,7 @@ function SSO() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
@@ -387,6 +396,7 @@ function PAO() {
 			done
 			exits=0
 			;;
+		# change position
 		"*999" | "OPS999")
 			newPos
 			;;
