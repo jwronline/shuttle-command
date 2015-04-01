@@ -3,6 +3,7 @@ clear
 # colours
 red='\033[0;31m'
 green='\033[0;32m'
+redblink='\033[5;41m'
 blue='\033[01;34m'
 NC='\033[0m'
 
@@ -213,12 +214,14 @@ function FD() {
 		# abort advisory
 		"*438" | "OPS438" )
 			echo -e "${green}ABORT ADVISORY TEST${NC}" ### abort advisory
+			echo -e "${redblink}ABORT${NC}" ###
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/439" | "ITEM439" )
 						echo -e "${green}$corr${NC}"
+						echo -e "${green}abort advisory test complete${NC}" ###
 						exits=1
 						;;
 					"+" | "HELP")
@@ -241,17 +244,46 @@ function FD() {
 	esac
 }
 
+function random() {
+	awk 'BEGIN{
+			min="'"$1"'"
+			max="'"$2"'"
+			srand()
+			print int(rand()*(max-min)+min)
+		}'
+}
+
+function emergencyWeather() {
+	randomtemp1=$(random 15 30)
+	randomtemp2=$(random 15 45)
+	randomhum1=$(random 5 50)
+	randomhum2=$(random 10 90)
+	randomwind1=$(random 0 50)
+	randomwind2=$(random 16 150)
+
+	div="+----------------+---------------+-----------------------+---------------+---------------+"
+	echo -e "$div"
+	echo -e "| location\t | temperature\t | preciptitation\t | humidity\t | wind\t\t | "
+	echo -e "$div"
+	echo -e "| Dakar\t\t | $randomtemp1 °C\t | $randomhum1%\t\t\t | $randomhum1\t\t | ${randomwind1} km/h\t |"
+	echo -e "$div"
+	echo -e "| White Sands\t | $randomtemp2 °C\t | $randomhum2%\t\t\t | $randomhum2\t\t | ${randomwind2} km/h\t |"
+	echo -e "$div"
+}
+
 function WXT() {
 	input "$enterops" operation
 
 	case $operation in
-		"*001" | "OPS001" )
+		# weather report
+		"*130" | "OPS130" )
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
-					"/001" | "ITEM001" )
-						echo -e "${green}$corr${NC}"
+					# emergency landing
+					"/642" | "ITEM642" )
+						emergencyWeather
 						exits=1
 						;;
 					"+" | "HELP")
