@@ -155,10 +155,12 @@ function CMDR() {
 	input "$enterops" operation
 
 	case $operation in
+		### flight plan SPEC
+		### reserve plan SPEC
 		#OMS ignition 1 (checklist 4)
 		"*008" | "OPS008" )
 			level=1000 ###
-			echo -e "OMS fuel level: ${green}$level${NC}" ###
+			echo -e "OMS fuel level: ${green}$level${NC}" ###value?
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
