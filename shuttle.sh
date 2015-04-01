@@ -148,6 +148,7 @@ function countdown() {
 		printf "\r%02d" $seconds
 		seconds=$(($seconds - 1))
 	done
+	echo
 }
 
 function CMDR() {
@@ -157,7 +158,7 @@ function CMDR() {
 		#OMS ignition 1 (checklist 4)
 		"*008" | "OPS008" )
 			level=1000 ###
-			echo "OMS fuel level: ${green}$level${NC}" ###
+			echo -e "OMS fuel level: ${green}$level${NC}" ###
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
@@ -199,7 +200,7 @@ function CMDR() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -233,7 +234,7 @@ function PLT() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -270,7 +271,7 @@ function FD() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -332,7 +333,7 @@ function WXT() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -374,7 +375,7 @@ function LD() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -407,7 +408,7 @@ function ELSS() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -440,7 +441,7 @@ function SSO() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -473,7 +474,7 @@ function PAO() {
 		"*999" | "OPS999")
 			newPos
 			;;
-		"+" )
+		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
