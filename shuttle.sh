@@ -212,6 +212,7 @@ function FD() {
 	case $operation in
 		# abort advisory
 		"*438" | "OPS438" )
+			echo -e "${green}ABORT ADVISORY TEST${NC}" ### abort advisory
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
@@ -286,11 +287,13 @@ function LD() {
 					# audio
 					"/137" | "ITEM137" )
 						echo -e "${green}$corr${NC}"
+						echo -e "${green}audio check complete${NC}" ###
 						exits=0
 						;;
 					# abort advisory
 					"/116" | "ITEM116" )
 							echo -e "${green}$corr${NC}"
+							echo -e "${green}abort advisory test complete${NC}" ###
 							exits=1
 							;;
 					"+" | "HELP")
