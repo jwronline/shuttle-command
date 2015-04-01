@@ -211,12 +211,12 @@ function FD() {
 
 	case $operation in
 		# abort advisory
-		"*001" | "OPS001" )
+		"*438" | "OPS438" )
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
-					"/001" | "ITEM001" )
+					"/439" | "ITEM439" )
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
