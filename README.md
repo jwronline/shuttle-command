@@ -8,12 +8,12 @@ You need an (external) numpad and modify it to look like this image:
 
 The keypad is modified to show:
 
-| original     | replaced |
-| ------------ | -------- |
-| <kbd>+</kbd> | HELP     |
-| <kbd>-</kbd> | POS      |
-| <kbd>/</kbd> | ITEM     |
-| <kbd>*</kbd> | OPS      |
+| original      | replaced |
+| ------------- | -------- |
+| <kbd>+</kbd>  | HELP     |
+| <kbd>-</kbd>  | POS      |
+| <kbd>/</kbd>  | ITEM     |
+| <kbd>\*</kbd> | OPS      |
 
 You'll also need a bash shell (included in most Linux distributions and in Mac OS X, emulators can be found for Windows)
 
