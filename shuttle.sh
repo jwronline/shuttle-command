@@ -140,19 +140,32 @@ function position() {
 	done
 }
 
+#display a countdown of "argument" seconds
+function countdown() {
+ 	seconds=$1
+ 	while [[ seconds -gt 0 ]]; do
+		sleep 1
+		printf "\r%02d" $seconds
+		seconds=$(($seconds - 1))
+	done
+}
+
 function CMDR() {
 	input "$enterops" operation
 
 	case $operation in
-		"*001" | "OPS001" )
+		#OMS ignition 1 (checklist 4)
+		"*008" | "OPS008" )
+			level=1000 ###
+			echo "OMS fuel level: $level" ###
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 
 				case $item in
-					"/001" | "ITEM001" )
-						echo -e "${green}$corr${NC}"
-						exits=1
+					"/301" | "ITEM301" )
+						echo -e "OMS-1: ${green}on${NC}\nOMS-2: ${green}on${NC}\nOMS-3: ${green}on${NC}" ###
+						exits=0
 						;;
 					"+" | "HELP")
 						echo -e "$iteminfo"
@@ -173,6 +186,7 @@ function CMDR() {
 			;;
 	esac
 }
+CMDR ##for testing purposes
 
 function PLT() {
 	input "$enterops" operation
