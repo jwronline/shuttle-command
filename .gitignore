@@ -12,3 +12,7 @@ desktop.ini
 # video #
 #########
 *.mov
+
+# test files #
+##############
+test.sh
