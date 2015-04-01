@@ -277,16 +277,22 @@ function LD() {
 	input "$enterops" operation
 
 	case $operation in
-		# audio check
+		# pre-flight checks
 		"*137" | "OPS137" )
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
+					# audio
 					"/137" | "ITEM137" )
 						echo -e "${green}$corr${NC}"
-						exits=1
+						exits=0
 						;;
+					# abort advisory
+					"/116" | "ITEM116" )
+							echo -e "${green}$corr${NC}"
+							exits=1
+							;;
 					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
