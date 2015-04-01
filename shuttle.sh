@@ -157,7 +157,7 @@ function CMDR() {
 		#OMS ignition 1 (checklist 4)
 		"*008" | "OPS008" )
 			level=1000 ###
-			echo "OMS fuel level: $level" ###
+			echo "OMS fuel level: ${green}$level${NC}" ###
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
