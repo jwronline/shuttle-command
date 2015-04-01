@@ -374,7 +374,9 @@ function LD() {
 			exits=0
 			;;
 		# change position
-		"*999" | "OPS999")
+		"*101" | "OPS101" )
+			echo -e "${green}Timer reset${NC}" ###?? language en zuu
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
