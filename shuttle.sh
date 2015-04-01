@@ -387,7 +387,10 @@ function ELSS() {
 	input "$enterops" operation
 
 	case $operation in
-		"*001" | "OPS001" )
+		#air pressure
+		"*003" | "OPS003" )
+			pressure=$(($(random 146 188)/10)) #make division floating point ###
+			echo -e "cabin pressure: $pressure PSI" ###
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
