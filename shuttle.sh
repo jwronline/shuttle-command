@@ -167,6 +167,24 @@ function CMDR() {
 						echo -e "OMS-1: ${green}on${NC}\nOMS-2: ${green}on${NC}\nOMS-3: ${green}on${NC}" ###
 						exits=0
 						;;
+					"/474" | "ITEM474" )
+						echo -e "starting OMS flight profile high" ###
+						countdown 10
+						echo -e "${green}OMS ignition${NC}" ###
+						exits=1
+						;;
+					"/475" | "ITEM475" )
+						echo -e "starting OMS flight profile normal" ###
+						countdown 10
+						echo -e "${green}OMS ignition${NC}" ###
+						exits=1
+						;;
+					"/476" | "ITEM476" )
+						echo -e "starting OMS flight profile low" ###
+						countdown 10
+						echo -e "${green}OMS ignition${NC}" ###
+						exits=1
+						;;
 					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
