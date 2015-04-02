@@ -213,14 +213,23 @@ function PLT() {
 	input "$enterops" operation
 
 	case $operation in
-		"*001" | "OPS001" )
+		# launch of satellite
+		"*302" | "OPS302" )
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
-					"/001" | "ITEM001" )
-						echo -e "${green}$corr${NC}"
-						exits=1
+					#open sun shield
+					"/179" | "ITEM179" )
+						echo -e "Sun shield opened" ###
+						;;
+					#turn on spinning engines on satellite
+					"/219" | "ITEM219" )
+						echo -e "Engines: ${green}ON${NC}" ###
+						;;
+					#loose latches
+					"/220" | "ITEM220" )
+						echo -e "Latches opened" ###better formulation
 						;;
 					"+" | "HELP")
 						echo -e "$iteminfo"
