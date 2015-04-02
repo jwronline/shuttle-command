@@ -202,12 +202,65 @@ function CMDR() {
 		"*999" | "OPS999")
 			newPos
 			;;
+		#set main flight plan
+		"*777" | "OPS777" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					"/601" | "ITEM601" )
+						echo -e "main flight plan: ${green}high${NC}" ###
+						exits=0
+						;;
+					"/602" | "ITEM602" )
+						echo -e "main flight plan: ${green}normal${NC}" ###
+						exits=0
+						;;
+					"/603" | "ITEM603" )
+						echo -e "main flight plan: ${green}low${NC}" ###
+						exits=0
+						;;
+					"+" | "HELP")
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+		#set secondary flight plan
+		"*778" | "OPS778" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					"/601" | "ITEM601" )
+						echo -e "main flight plan: ${green}high${NC}" ###
+						exits=0
+						;;
+					"/602" | "ITEM602" )
+						echo -e "main flight plan: ${green}normal${NC}" ###
+						exits=0
+						;;
+					"/603" | "ITEM603" )
+						echo -e "main flight plan: ${green}low${NC}" ###
+						exits=0
+						;;
+					"+" | "HELP")
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
 		"+" | * )
 			echo "$opsinfo"
 			;;
 	esac
 }
-CMDR ##for testing purposes
 
 function PLT() {
 	input "$enterops" operation
