@@ -157,7 +157,7 @@ function CMDR() {
 	case $operation in
 		### flight plan SPEC
 		### reserve plan SPEC
-		#OMS ignition 1 (checklist 4)
+		#OMS ignition 1 (CMDR checklist 4)
 		"*008" | "OPS008" )
 			level=1000 ###
 			echo -e "OMS fuel level: ${green}$level${NC}" ###value?
@@ -245,6 +245,27 @@ function PLT() {
 			done
 			exits=0
 			;;
+		#OMS engines
+		"*008" | "OPS008" )
+			level=1000 ###
+			echo -e "OMS fuel level: ${green}$level${NC}" ###value?
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					#OMS status
+					"/301" | "ITEM301" )
+						echo -e "OMS-1: ${green}on${NC}\nOMS-2: ${green}on${NC}\nOMS-3: ${green}on${NC}" ###
+						exits=0
+						;;
+					#de-orbit
+					"/478" | "ITEM4758" )
+						echo -e "starting OMS flight profile ${green}de-orbit${NC}" ###
+						countdown 10
+						echo -e "${green}OMS ignition${NC}" ###
+						exits=1
+						;;
 		# change position
 		"*999" | "OPS999")
 			newPos
