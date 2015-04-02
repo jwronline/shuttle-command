@@ -198,10 +198,6 @@ function CMDR() {
 			done
 			exits=0
 			;;
-		# change position
-		"*999" | "OPS999")
-			newPos
-			;;
 		#set main flight plan
 		"*777" | "OPS777" )
 			exits=0
@@ -256,6 +252,10 @@ function CMDR() {
 						;;
 				esac
 			done
+		# change position
+		"*999" | "OPS999")
+			newPos
+			;;
 		"+" | * )
 			echo "$opsinfo"
 			;;
