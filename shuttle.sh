@@ -231,6 +231,10 @@ function PLT() {
 					"/220" | "ITEM220" )
 						echo -e "Latches opened" ###better formulation
 						;;
+					#launch satellite
+					"/224" | "ITEM224" )
+						echo -e "Satellite launched" ###better formulation
+						;;
 					"+" | "HELP")
 						echo -e "$iteminfo"
 						;;
