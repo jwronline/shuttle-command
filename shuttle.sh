@@ -493,7 +493,8 @@ function ELSS() {
 			for (( i = 0; i < 10; i++ )); do
 				min=$(($min+1))
 				max=$(($max-1))
-				pressure=$(($(random $min $max)/10)) #make division floating point ###
+				pressure=$(random $min $max)
+				pressure=${pressure:0:2}.${pressure:2:1}
 				echo -e "cabin pressure: ${green}$pressure PSI${NC}" ###
 				sleep 1
 			done
@@ -514,6 +515,11 @@ function ELSS() {
 				esac
 			done
 			exits=0
+			;;
+		# retract launch arm
+		"*140" | "OPS140")
+			echo -e "Retracting launch arm" ###
+			exits=1
 			;;
 		# change position
 		"*999" | "OPS999")
