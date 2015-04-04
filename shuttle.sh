@@ -535,13 +535,14 @@ function SSO() {
 	input "$enterops" operation
 
 	case $operation in
-		"*001" | "OPS001" )
+		#APU operations
+		"*183" | "OPS183" )
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
 				case $item in
-					"/001" | "ITEM001" )
-						echo -e "${green}$corr${NC}"
+					"/162" | "ITEM162" )
+						echo -e "${green}Shuttle on internal power supply${NC}" ###
 						exits=1
 						;;
 					"+" | "HELP")
