@@ -188,7 +188,7 @@ function CMDR() {
 						echo -e "${green}OMS ignition${NC}" ###
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -217,7 +217,7 @@ function CMDR() {
 						echo -e "main flight plan: ${green}low${NC}" ###
 						exits=0
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -244,7 +244,7 @@ function CMDR() {
 						echo -e "main flight plan: ${green}low${NC}" ###
 						exits=0
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -253,7 +253,7 @@ function CMDR() {
 				esac
 			done
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
@@ -288,7 +288,7 @@ function PLT() {
 					"/224" | "ITEM224" )
 						echo -e "Satellite launched" ###better formulation
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -320,7 +320,7 @@ function PLT() {
 						exits=1
 						;;
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
@@ -346,7 +346,7 @@ function FD() {
 						echo -e "${green}abort advisory test complete${NC}" ###
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -357,7 +357,7 @@ function FD() {
 			exits=0
 			;;
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
@@ -408,7 +408,7 @@ function WXT() {
 						emergencyWeather
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -418,8 +418,27 @@ function WXT() {
 			done
 			exits=0
 			;;
+		# speed, altitude, position
+		"*200" | "OPS200" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}tracking initialised${NC}. What do you want to track?" item ###
+				case $item in
+					# launch
+					"/006" | "ITEM006" )
+						velocity = "10 000 km / h" ###
+						echo -e "velocity: ${green}$velocity" ###TO FIX
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+			done
+			;;
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
@@ -460,7 +479,7 @@ function LD() {
 						echo -e "${green}abort advisory test complete${NC}" ###
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -470,13 +489,13 @@ function LD() {
 			done
 			exits=0
 			;;
-		# change position
+		# reset the timer
 		"*101" | "OPS101" )
 			echo -e "${green}Timer reset${NC}" ###?? language en zuu
+		# change position
 		"*999" | "OPS999" )
 			newPos
-			;;
-		"+" | * )
+			;;+" | * )
 			echo "$opsinfo"
 			;;
 	esac
@@ -506,7 +525,7 @@ function ELSS() {
 						echo -e "${green}CABIN LEAK CHECK${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -517,12 +536,12 @@ function ELSS() {
 			exits=0
 			;;
 		# retract launch arm
-		"*140" | "OPS140")
+		"*140" | "OPS140" )
 			echo -e "Retracting launch arm" ###
 			exits=1
 			;;
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
@@ -545,7 +564,7 @@ function SSO() {
 						echo -e "${green}Shuttle on internal power supply${NC}" ###
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -556,7 +575,7 @@ function SSO() {
 			exits=0
 			;;
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
@@ -578,7 +597,7 @@ function PAO() {
 						echo -e "${green}$corr${NC}"
 						exits=1
 						;;
-					"+" | "HELP")
+					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
 					* )
@@ -589,7 +608,7 @@ function PAO() {
 			exits=0
 			;;
 		# change position
-		"*999" | "OPS999")
+		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
