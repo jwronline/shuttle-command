@@ -253,6 +253,7 @@ function CMDR() {
 						;;
 				esac
 			done
+			;;
 		# change position
 		"*999" | "OPS999" )
 			newPos
