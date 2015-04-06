@@ -9,8 +9,8 @@ NC='\033[0m'
 
 # choosing input method
 while [[ true ]]; do
-	echo "choose your input method: "
-	echo "kies je inputmethode: "
+	echo -e "choose your input method: "
+	echo -e "kies je inputmethode: "
 	echo -n -e "${blue}>${NC}"
 	read inputmethod
 	if [[ $inputmethod == "/001" || $inpumethod == "ITEM001" ]]; then
@@ -91,7 +91,7 @@ function newPos() {
 	input "${red}$surexit${NC}" exitting
 
 	if [[ $exitting == "/999" || $exitting == "ITEM999" ]]; then
-		echo "$exitng $pos"
+		echo -e "$exitng $pos"
 		exitting=true
 	fi
 }
@@ -259,7 +259,7 @@ function CMDR() {
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -323,12 +323,13 @@ function PLT() {
 						;;
 				esac
 			done
+			;;
 		# change position
 		"*999" | "OPS999" )
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -365,7 +366,7 @@ function FD() {
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -439,6 +440,7 @@ function WXT() {
 					* )
 						echo -e "${red}$err${NC}"
 						;;
+				esac
 			done
 			;;
 		# change position
@@ -446,7 +448,7 @@ function WXT() {
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -466,6 +468,7 @@ function LD() {
 						;;
 				esac
 			done
+			;;
 		"*137" | "OPS137" )
 			exits=0
 			while [[ $exits == 0 ]]; do
@@ -496,11 +499,13 @@ function LD() {
 		# reset the timer
 		"*101" | "OPS101" )
 			echo -e "${green}Timer reset${NC}" ###?? language en zuu
+			;;
 		# change position
 		"*999" | "OPS999" )
 			newPos
-			;;+" | * )
-			echo "$opsinfo"
+			;;
+		"+" | * )
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -549,7 +554,7 @@ function ELSS() {
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -583,7 +588,7 @@ function SSO() {
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
@@ -616,7 +621,7 @@ function PAO() {
 			newPos
 			;;
 		"+" | * )
-			echo "$opsinfo"
+			echo -e "$opsinfo"
 			;;
 	esac
 }
