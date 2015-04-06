@@ -321,6 +321,8 @@ function PLT() {
 						echo -e "${green}OMS ignition${NC}" ###
 						exits=1
 						;;
+				esac
+			done
 		# change position
 		"*999" | "OPS999" )
 			newPos
