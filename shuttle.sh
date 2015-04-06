@@ -225,6 +225,7 @@ function CMDR() {
 						;;
 				esac
 			done
+			;;
 		#set secondary flight plan
 		"*778" | "OPS778" )
 			exits=0
