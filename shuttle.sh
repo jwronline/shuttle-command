@@ -495,7 +495,7 @@ function LD() {
 				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
-						echo -e ""
+						echo -e "" ###
 						;;
 				esac
 			done
@@ -526,10 +526,6 @@ function LD() {
 				esac
 			done
 			exits=0
-			;;
-		# reset the timer
-		"*101" | "OPS101" )
-			echo -e "${green}Timer reset${NC}" ###?? language en zuu
 			;;
 		# change position
 		"*999" | "OPS999" )
