@@ -382,10 +382,11 @@ function random() {
 
 function emergencyWeather() {
 	randomtemp1=$(random 15 30)
-	randomtemp2=$(random 15 45)
 	randomhum1=$(random 5 50)
-	randomhum2=$(random 10 90)
 	randomwind1=$(random 0 50)
+
+	randomtemp2=$(random 15 45)
+	randomhum2=$(random 10 90)
 	randomwind2=$(random 16 150)
 
 	div="+----------------+---------------+-----------------------+---------------+---------------+"
@@ -395,6 +396,31 @@ function emergencyWeather() {
 	echo -e "| Dakar\t\t | $randomtemp1 °C\t | $randomhum1%\t\t\t | $randomhum1\t\t | ${randomwind1} km/h\t |"
 	echo -e "$div"
 	echo -e "| White Sands\t | $randomtemp2 °C\t | $randomhum2%\t\t\t | $randomhum2\t\t | ${randomwind2} km/h\t |"
+	echo -e "$div"
+}
+
+function landingWeather() {
+	randomtemp1=$(random 15 30)
+	randomhum1=$(random 5 50)
+	randomwind1=$(random 0 50)
+
+	randomtemp2=$(random 20 35)
+	randomhum2=$(random 10 40)
+	randomwind2=$(random 16 50)
+
+	randomtemp3=$(random 15 45)
+	randomhum3=$(random 10 90)
+	randomwind3=$(random 16 150)
+
+	div="+----------------+---------------+-----------------------+---------------+---------------+"
+	echo -e "$div"
+	echo -e "| location\t | temperature\t | preciptitation\t | humidity\t | wind\t\t | "
+	echo -e "$div"
+	echo -e "| Kennedy\t | $randomtemp1 °C\t | $randomhum1%\t\t\t | $randomhum1\t\t | ${randomwind1} km/h\t |"
+	echo -e "$div"
+	echo -e "| Edwards\t | $randomtemp2 °C\t | $randomhum2%\t\t\t | $randomhum2\t\t | ${randomwind2} km/h\t |"
+	echo -e "$div"
+	echo -e "| White Sands\t | $randomtemp3 °C\t | $randomhum3%\t\t\t | $randomhum3\t\t | ${randomwind3} km/h\t |"
 	echo -e "$div"
 }
 
@@ -412,6 +438,11 @@ function WXT() {
 					"/642" | "ITEM642" )
 						emergencyWeather
 						exits=1
+						;;
+					# landing weather
+					"/145" | "ITEM145" )
+						landingWeather
+						exits=0
 						;;
 					"+" | "HELP" )
 						echo -e "$iteminfo"
