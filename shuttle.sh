@@ -509,7 +509,7 @@ function LD() {
 					"/137" | "ITEM137" )
 						echo -e "${green}$corr${NC}"
 						echo -e "${green}audio check complete${NC}" ###
-						exits=0
+						exits=1
 						;;
 					# abort advisory
 					"/116" | "ITEM116" )
