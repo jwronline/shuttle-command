@@ -327,6 +327,7 @@ function CMDR() {
 					* )
 						echo -e "${red}$err${NC}"
 						;;
+				esac
 			done
 			;;
 		# change position
