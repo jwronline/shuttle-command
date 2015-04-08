@@ -427,6 +427,36 @@ function PLT() {
 				esac
 			done
 			;;
+		# prox ops
+		"*190" | "OPS190" )
+			level=1000 ###
+			echo -e "OMS fuel level: ${green}$level${NC}" ###value?
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					#OMS status
+					"/301" | "ITEM301" )
+						echo -e "OMS-1: ${green}on${NC}\nOMS-2: ${green}on${NC}\nOMS-3: ${green}on${NC}" ###
+						exits=0
+						;;
+					#de-orbit
+					"/478" | "ITEM4758" )
+						echo -e "starting OMS flight profile ${green}de-orbit${NC}" ###
+						countdown 10
+						echo -e "${green}OMS ignition${NC}" ###
+						exits=1
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			;;
 		# change position
 		"*999" | "OPS999" )
 			newPos
@@ -594,7 +624,7 @@ function WXT() {
 							echo -e "distance: $dist ft" ###
 							sleep 2
 						done
-
+						exits=1
 					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
