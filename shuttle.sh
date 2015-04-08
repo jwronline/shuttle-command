@@ -588,7 +588,7 @@ function WXT() {
 				input "${green}$operation${NC} $initialised" item
 				case $item in
 					# emergency landing
-					"/642" | "ITEM642" )
+					"/624" | "ITEM624" )
 						emergencyWeather
 						exits=1
 						;;
