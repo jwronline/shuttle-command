@@ -626,6 +626,7 @@ function WXT() {
 							sleep 2
 						done
 						exits=1
+						;;
 					"+" | "HELP" )
 						echo -e "$iteminfo"
 						;;
