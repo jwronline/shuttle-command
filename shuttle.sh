@@ -280,6 +280,55 @@ function CMDR() {
 				esac
 			done
 			;;
+		# pre-launch satellite
+		"*320" | "OPS320" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					#preparation
+					"/491" | "ITEM491" )
+						echo -e "preparing satellite launch" ###
+						;;
+					# removal maneuver
+					"/549" | "ITEM549" )
+						echo -e "removal maneuver" ###
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			;;
+		# OMS fuel level
+		"*003" | "OPS003" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					# OMS fuel level
+					"/008" | "ITEM008" )
+						oms="40%"
+						echo -e "OMS fuel level:$oms" ###
+						;;
+					# RCS fuel level
+					"/009" | "ITEM009" )
+						rcs="60%"
+						echo -e "RCS fuel level:$rcs" ###
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+			done
+			;;
 		# change position
 		"*999" | "OPS999" )
 			newPos
@@ -413,7 +462,26 @@ function FD() {
 						;;
 				esac
 			done
+			;;
+		# check for on-orbit
+		"*016" | "OPS016" )
+			echo -e "${green}on-orbit operations${NC}" ### abort advisory
 			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+				case $item in
+					"/080" | "ITEM080" )
+						echo -e "${green}beginning check${NC}" ###
+						exits=1
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
 			;;
 		# change position
 		"*999" | "OPS999" )
@@ -516,8 +584,38 @@ function WXT() {
 				case $item in
 					# launch
 					"/006" | "ITEM006" )
-						velocity = "10 000 km / h" ###
+						velocity="10 000 km / h" ###
 						echo -e "velocity: ${green}$velocity" ###TO FIX
+						;;
+					"/010" | "ITEM010" )
+						dist="8000"
+						while [[ $dist -ge 0 ]]; do
+							dist=$(($dist - 80))
+							echo -e "distance: $dist ft" ###
+							sleep 2
+						done
+
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			;;
+		# satellite tracking
+		"*274" | "OPS274" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "satellite tracking ${green}initialised${NC}." item ###
+				case $item in
+					# tracking
+					"/320" | "ITEM320" )
+						velocity="10m/s" ###
+						distance="20m"
+						echo -e "relative velocity: ${green}$velocity${NC}" ###TO FIX
+						echo -e "distance: ${green}$distance${NC}"
 						;;
 					"+" | "HELP" )
 						echo -e "$iteminfo"
@@ -585,7 +683,10 @@ function LD() {
 						;;
 				esac
 			done
-			exits=0
+			;;
+		# satellite activation
+		"/987" | "ITEM987" )
+			echo -e "satellite ${green}activated${NC}" ###
 			;;
 		# change position
 		"*999" | "OPS999" )
