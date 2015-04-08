@@ -254,6 +254,32 @@ function CMDR() {
 				esac
 			done
 			;;
+		# OMS disabling
+		"*001" | "OPS001" )
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					#disable OMS engines
+					"/303" | "ITEM303" )
+						exits=1
+						sleep 1
+						echo -e "OMS-1: ${red}disabled${NC}" ###
+						sleep 0.1
+						echo -e "OMS-2: ${red}disabled${NC}" ###
+						sleep 0.1
+						echo -e "OMS-3: ${red}disabled${NC}" ###
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			;;
 		# change position
 		"*999" | "OPS999" )
 			newPos
@@ -321,6 +347,34 @@ function PLT() {
 						echo -e "${green}OMS ignition${NC}" ###
 						exits=1
 						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
+				esac
+			done
+			;;
+		# OMS thrust level
+		"*005" | "OPS005" )
+			###
+			thrust="10%" ###
+			echo -e "thrust: $thrust" ###
+			exits=0
+			while [[ $exits == 0 ]]; do
+				input "${green}$operation${NC} $initialised" item
+
+				case $item in
+					"/620" | "ITEM620" )
+						echo -e "thrust reduced" ###
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
+						;;
 				esac
 			done
 			;;
@@ -380,7 +434,7 @@ function random() {
 		}'
 }
 
-function emergencyWeather() {
+function emergencyWeather() { ###
 	randomtemp1=$(random 15 30)
 	randomhum1=$(random 5 50)
 	randomwind1=$(random 0 50)
@@ -399,7 +453,7 @@ function emergencyWeather() {
 	echo -e "$div"
 }
 
-function landingWeather() {
+function landingWeather() { ###
 	randomtemp1=$(random 15 30)
 	randomhum1=$(random 5 50)
 	randomwind1=$(random 0 50)
@@ -495,7 +549,13 @@ function LD() {
 				input "${green}$operation${NC} $initialised" item
 				case $item in
 					"/001" | "ITEM001" )
-						echo -e "" ###
+						echo -e "countdown resumed" ###
+						;;
+					"+" | "HELP" )
+						echo -e "$iteminfo"
+						;;
+					* )
+						echo -e "${red}$err${NC}"
 						;;
 				esac
 			done
@@ -572,7 +632,7 @@ function ELSS() {
 			exits=0
 			;;
 		# retract launch arm
-		"*140" | "OPS140" )
+		"/140" | "ITEM140" )
 			echo -e "Retracting launch arm" ###
 			exits=1
 			;;
@@ -609,6 +669,20 @@ function SSO() {
 				esac
 			done
 			exits=0
+			;;
+		# trajectory
+		"*200" | "OPS200" )
+			###
+			echo -e "   ^ "
+			echo -e "   |                         * "
+			echo -e " h |               * "
+			echo -e " e |          ${green}*${NC} "
+			echo -e " i |      ${green}*${NC} "
+			echo -e " g |   ${green}*${NC} "
+			echo -e " h | ${green}*${NC} "
+			echo -e " t |${green}*${NC} "
+			echo -e "   +----------------------------------> "
+			echo -e "             downrange "
 			;;
 		# change position
 		"*999" | "OPS999" )
