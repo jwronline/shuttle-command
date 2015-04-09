@@ -27,7 +27,7 @@ cd shuttle-command
 ls
 ```
 
-The advantage of using git instead of just downloading the files using curl, or the github zip download feature is that you can update the script when necessary using `git pull
+The advantage of using git instead of just downloading the files using curl, or the github zip download feature is that you can update the script when necessary using `git pull`
 
 or if you don't have git, a simple curl should also work:
 
@@ -37,6 +37,8 @@ unzip master.zip
 cd shuttle-command
 ls
 ```
+
+This should be done again regularly, to ensure you have the version with the least errors as possible.
 
 ## Changing the keymap
 
@@ -120,6 +122,12 @@ This is also the preferred method for a full keyboard without alterations. By ch
 This method is optimised for input by numpad, but not great when you want to still do other things in the same window. It also requires a rather large font size to be legible.
 
 ![demo](img/demo-font.png)
+
+# Development status
+
+For now, not all codes from [jwr-shuttle/scripts](https://github.com/haroenv/jwr-shuttle/tree/master/scripts) have been implemented. You should be able to help by reading it and adding the codes to the appropriate moment.
+
+Also notably WXT still needs a lot of additions to the interactive part.
 
 # License
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
