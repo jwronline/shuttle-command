@@ -125,7 +125,7 @@ This method is optimised for input by numpad, but not great when you want to sti
 
 # Development status
 
-For now, not all codes from [jwr-shuttle/scripts](https://github.com/haroenv/jwr-shuttle/tree/master/scripts) have been implemented. You should be able to help by reading it and adding the codes to the appropriate moment.
+For now, not all codes from [jwr-shuttle/scripts](https://jeugdwerkgroep-ruimtevaart.github.io/jwr-shuttle) have been implemented. You should be able to help by reading it and adding the codes to the appropriate moment.
 
 Also notably WXT still needs a lot of additions to the interactive part.
 
@@ -134,7 +134,7 @@ Also notably WXT still needs a lot of additions to the interactive part.
 
 shuttle-command is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). No warranty whatsoever.
 
-Made for [JWR v.z.w](http://jwronline.be) by Haroen Viaene
+Made for [JWR v.z.w](http://jwronline.be) by [Haroen Viaene](http://haroenv.github.io)
 
 
 Font is based on ["For Personal Gain - NonProfit"](https://medium.com/portfolio-process/why-im-giving-my-typeface-away-for-free-466919f02d96) (CC 0)
