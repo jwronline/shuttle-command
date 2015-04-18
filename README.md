@@ -4,7 +4,7 @@ Use a modified numpad to emulate the input of commands in a space shuttle.
 # Set-up
 You need an (external) numpad and modify it to look like this image:
 
-![modified numpad](img/numpad.png)
+![modified numpad](https://raw.githubusercontent.com/jeugdwerkgroep-ruimtevaart/shuttle-command/master/img/numpad.png)
 
 The keypad is modified to show:
 
@@ -15,14 +15,14 @@ The keypad is modified to show:
 | <kbd>/</kbd>  | ITEM     |
 | <kbd>\*</kbd> | OPS      |
 
-You'll also need a bash shell (included in most Linux distributions and in Mac OS X, emulators can be found for Windows)
+You'll also need a bash shell (included in most Linux distributions and in Mac OS X, emulators can be found for Windows, but can offer incomplete experiences).
 
 ## Downloading the script
 
-Download the [shuttle.sh](img/shuttle.sh) script using your preferred method. For example through git:
+Download the [shuttle.sh](https://github.com/jeugdwerkgroep-ruimtevaart/shuttle-command/blob/master/shuttle.sh) script using your preferred method. For example through git:
 
 ```sh
-git clone https://github.com/haroenv/shuttle-command.git
+git clone https://github.com/jeugdwerkgroep-ruimtevaart/shuttle-command.git
 cd shuttle-command
 ls
 ```
@@ -32,7 +32,7 @@ The advantage of using git instead of just downloading the files using curl, or 
 or if you don't have git, a simple curl should also work:
 
 ```sh
-curl https://github.com/Haroenv/shuttle-command/archive/master.zip
+curl https://github.com/jeugdwerkgroep-ruimtevaart/shuttle-command/archive/master.zip
 unzip master.zip
 cd shuttle-command
 ls
@@ -63,7 +63,7 @@ When using the script, your "input method" will be "ITEM002"
 
 ## Using the modified font (not recommended)
 
-Download the [font](font.otf) and install it (usually: `sudo cp -r ./font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
+Download the [font](https://github.com/jeugdwerkgroep-ruimtevaart/shuttle-command/blob/master/font.otf) and install it (usually: `sudo cp -r ./font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
 
 To make things easy, the first method is also included in a script called `moveFont.sh`, which can ask for your admin password.
 
@@ -102,26 +102,26 @@ To exit from a position, enter operation 999.
 - [ ] to do: remake the scripts to make use of `shuttle.sh`
 - [ ] to do: make `shuttle.sh` in such a way that it matches the script
 
-The times at which certain codes have to be entered are written in the space shuttle script. These scripts are so far only in Dutch. They can be found at [Haroenv/jwr-shuttle/scripts](http://github.com/haroenv/jwr-shuttle/tree/master/scripts)
+The times at which certain codes have to be entered are written in the space shuttle script. These scripts are so far only in Dutch. They can be found at [jeugdwerkgroep-ruimtevaart/jwr-shuttle/scripts](http://github.com/jeugdwerkgroep-ruimtevaart/jwr-shuttle/tree/master/scripts) and [jeugdwerkgroep-ruimtevaart.github.io/jwr-shuttle](https://jeugdwerkgroep-ruimtevaart.github.io/jwr-shuttle)
 
 # Demo
 ## Delayed input
 
 This is the method requiring the least set-up. The script waits for a carriage return (<kbd>ENTER</kbd>), then it replaces <kbd>/</kbd> to <kbd>ITEM</kbd> etc., after which it will be showed on that line.
 
-![demo](img/demo-del.png)
+![demo](https://raw.githubusercontent.com/jeugdwerkgroep-ruimtevaart/shuttle-command/master/img/demo-del.png)
 
 ## Changed keymap
 
 This is also the preferred method for a full keyboard without alterations. By changing your keymap, the keys on the keypad will be converted to the corresponding codes when correctly set up.
 
-![demo](img/demo-keymap.png)
+![demo](https://raw.githubusercontent.com/jeugdwerkgroep-ruimtevaart/shuttle-command/master/img/demo-keymap.png)
 
 ## Modified font
 
 This method is optimised for input by numpad, but not great when you want to still do other things in the same window. It also requires a rather large font size to be legible.
 
-![demo](img/demo-font.png)
+![demo](https://raw.githubusercontent.com/jeugdwerkgroep-ruimtevaart/shuttle-command/master/img/demo-font.png)
 
 # Development status
 
