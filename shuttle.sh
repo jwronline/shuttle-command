@@ -88,11 +88,11 @@ echo -e "$helpmess"
 
 # get out of a position, press /999 to confirm
 function newPos() {
-	input "${red}$surexit${NC}" exitting
+	input "${red}$surexit${NC}" exiting
 
-	if [[ $exitting == "/999" || $exitting == "ITEM999" ]]; then
+	if [[ $exiting == "/999" || $exiting == "ITEM999" ]]; then
 		echo -e "$exitng $pos"
-		exitting=true
+		exiting=true
 	fi
 }
 
@@ -863,7 +863,7 @@ function PAO() {
 # main method
 while [[ true ]]; do
 	position
-	while [[ $exitting != true ]]; do
+	while [[ $exiting != true ]]; do
 		case $pos in
 			"CMDR" )
 				CMDR
@@ -891,5 +891,5 @@ while [[ true ]]; do
 				;;
 		esac
 	done
-	exitting=false
+	exiting=false
 done
