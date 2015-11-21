@@ -282,6 +282,7 @@ function CMDR() {
 			;;
 		# pre-launch satellite
 		"*320" | "OPS320" )
+			echo "haha"
 			exits=0
 			while [[ $exits == 0 ]]; do
 				input "${green}$operation${NC} $initialised" item
