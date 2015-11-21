@@ -755,7 +755,7 @@ function ELSS() {
 						exits=1
 						;;
 					"+" | "HELP" )
-						echo -e "$iteminfo"
+echo -e "$iteminfo"
 						;;
 					* )
 						echo -e "${red}$err${NC}"
