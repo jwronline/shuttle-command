@@ -765,7 +765,7 @@ echo -e "$iteminfo"
 			exits=0
 			;;
 		# retract launch arm
-		"/140" | "ITEM140" )
+		"*140" | "OPS140" )
 			echo -e "Retracting launch arm" ###
 			exits=1
 			;;
