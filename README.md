@@ -63,9 +63,9 @@ When using the script, your "input method" will be "ITEM002"
 
 ## Using the modified font (not recommended)
 
-Download the [font](https://github.com/jwronline/shuttle-command/blob/master/font.otf) and install it (usually: `sudo cp -r ./font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
+Download the [font](https://github.com/jwronline/shuttle-command/blob/master/font.otf) and install it (usually: `sudo cp -r ./font/font.otf /usr/share/fonts/truetype/`) or installing it using the default graphical method.
 
-To make things easy, the first method is also included in a script called `moveFont.sh`, which can ask for your admin password.
+To make things easy, the first method is also included in a script called `font/moveFont.sh`, which can ask for your admin password.
 
 and make sure it is used in your terminal (right-click > preferences > font > For Personal Gain (regular)).
 
