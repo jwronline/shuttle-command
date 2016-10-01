@@ -12,7 +12,7 @@ while [[ true ]]; do
   echo -e "kies je inputmethode: "
   echo -n -e "${blue}>${NC}"
   read inputmethod
-  if [[ $inputmethod == "/001" || $inpumethod == "ITEM001" ]]; then
+  if [[ $inputmethod == "/001" || $inputmethod == "ITEM001" ]]; then
     # input method without replacement
     function input() {
       echo -e "$1"
@@ -20,7 +20,7 @@ while [[ true ]]; do
       read $2
     }
     break
-  elif [[ $inputmethod == "/002" || $inpumethod == "ITEM002" ]]; then
+  elif [[ $inputmethod == "/002" || $inputmethod == "ITEM002" ]]; then
     # input with replacement
     function input() {
       echo -e "$1"
