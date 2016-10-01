@@ -58,7 +58,7 @@ function WXT() {
             exits=1
             ;;
           # landing weather
-          "/145" | "ITEM145" )
+          "/320" | "ITEM320" )
             landingWeather
             exits=0
             ;;
@@ -113,6 +113,7 @@ function WXT() {
             distance="20m"
             echo -e "relative velocity: ${green}$velocity${NC}" ###TO FIX
             echo -e "distance: ${green}$distance${NC}"
+            exits=1
             ;;
           "+" | "HELP" )
             echo -e "$iteminfo"
