@@ -113,6 +113,7 @@ function WXT() {
             distance="20m"
             echo -e "relative velocity: ${green}$velocity${NC}" ###TO FIX
             echo -e "distance: ${green}$distance${NC}"
+            exits=1
             ;;
           "+" | "HELP" )
             echo -e "$iteminfo"
