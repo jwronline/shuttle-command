@@ -79,7 +79,7 @@ function WXT() {
         input "${green}tracking initialised${NC}. What do you want to track?" item ###
         case $item in
           # launch
-          "/005" | "ITEM005" )
+          "/006" | "ITEM006" )
             velocity="10 000 km / h" ###
             echo -e "velocity: ${green}$velocity" ###TO FIX
             ;;
