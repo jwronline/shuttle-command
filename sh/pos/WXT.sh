@@ -58,7 +58,7 @@ function WXT() {
             exits=1
             ;;
           # landing weather
-          "/145" | "ITEM145" )
+          "/320" | "ITEM320" )
             landingWeather
             exits=0
             ;;
@@ -79,7 +79,7 @@ function WXT() {
         input "${green}tracking initialised${NC}. What do you want to track?" item ###
         case $item in
           # launch
-          "/006" | "ITEM006" )
+          "/005" | "ITEM005" )
             velocity="10 000 km / h" ###
             echo -e "velocity: ${green}$velocity" ###TO FIX
             ;;
