@@ -85,7 +85,7 @@ function WXT() {
             ;;
           "/010" | "ITEM010" )
             dist="8000"
-            while [[ $dist -ge 0 ]]; do
+            while [[ $dist -ge 80 ]]; do
               dist=$(($dist - 80))
               echo -e "distance: $dist ft" ###
               sleep 2
