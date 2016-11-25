@@ -82,6 +82,7 @@ function WXT() {
           "/006" | "ITEM006" )
             velocity="10 000 km / h" ###
             echo -e "velocity: ${green}$velocity" ###TO FIX
+            exits=1
             ;;
           "/010" | "ITEM010" )
             dist="8000"
