@@ -80,8 +80,8 @@ function WXT() {
         case $item in
           # launch
           "/006" | "ITEM006" )
-            velocity="10 000 km / h" ###
-            echo -e "velocity: ${green}$velocity" ###TO FIX
+            velocity="10 000 km/h" ###
+            echo -e "velocity: ${green}$velocity${NC}" ###TO FIX
             exits=1
             ;;
           "/010" | "ITEM010" )
